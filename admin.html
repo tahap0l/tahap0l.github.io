@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Paneli | Polis Eğitimi Portalı</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #1e293b;
+      --accent: #3b82f6;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --danger: #ef4444;
+      --success: #22c55e;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background-color: var(--panel);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+    nav {
+      background-color: var(--panel);
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      border-bottom: 1px solid #334155;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section {
+      background-color: var(--panel);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    h2 {
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+    }
+    th {
+      background-color: #334155;
+      color: var(--text);
+    }
+    tr:nth-child(even) {
+      background-color: #1e293b;
+    }
+    tr:nth-child(odd) {
+      background-color: #273449;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .btn-edit {
+      background-color: var(--success);
+      color: white;
+    }
+    .btn-edit:hover {
+      background-color: #16a34a;
+    }
+    .btn-delete {
+      background-color: var(--danger);
+      color: white;
+    }
+    .btn-delete:hover {
+      background-color: #b91c1c;
+    }
+    @media (max-width: 768px) {
+      main, header, nav {
+        padding: 1rem;
+      }
+      th, td {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>👮 Admin Paneli - Polis Eğitimi Portalı</h1>
+  </header>
+  <nav>
+    <a href="#">Kullanıcılar</a>
+    <a href="#">Eğitimler</a>
+    <a href="#">Sınavlar</a>
+    <a href="#">Ürünler</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Kayıtlı Kullanıcılar</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Ad Soyad</th>
+            <th>E-Posta</th>
+            <th>İşlem</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mehmet Kara</td>
+            <td>mehmet@example.com</td>
+            <td>
+              <button class="btn-edit">Düzenle</button>
+              <button class="btn-delete">Sil</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Ayşe Yılmaz</td>
+            <td>ayse@example.com</td>
+            <td>
+              <button class="btn-edit">Düzenle</button>
+              <button class="btn-delete">Sil</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
