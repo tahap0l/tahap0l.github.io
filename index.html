@@ -1,4 +1,3 @@
-
 <!DOCTYPE html><html lang="tr">
 <head>
   <meta charset="UTF-8">
@@ -11,19 +10,20 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage-compat.js"></script>
   <style>
     body {
-      background-color: #f2f4f8;
+      background-color: #121212;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
     }
     .navbar {
-      border-bottom: 2px solid #ffc107;
+      border-bottom: 2px solid #a64ca6;
     }
     .nav-link {
       font-weight: 600;
-      color: #fff !important;
+      color: #ffffff !important;
       margin: 0 10px;
     }
     .nav-link:hover, .nav-link:focus {
-      color: #ffc107 !important;
+      color: #a64ca6 !important;
       text-decoration: underline;
     }
     .navbar-nav {
@@ -50,15 +50,17 @@
       to { opacity: 1; }
     }
     h2 {
-      border-left: 5px solid #ffc107;
+      border-left: 5px solid #a64ca6;
       padding-left: 10px;
+      color: #a64ca6;
     }
     .video-item, .quiz-question {
       padding: 15px;
-      background-color: #fff;
+      background-color: #1e1e1e;
       border-radius: 10px;
       margin-bottom: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+      color: #ffffff;
     }
     .quiz-question label {
       font-weight: 600;
@@ -66,20 +68,39 @@
     .quiz-question input[type="radio"] {
       margin-right: 5px;
     }
-@media (max-width: 768px) {
-  .navbar-nav {
-    flex-direction: column !important;
-    align-items: flex-start;
-    padding-left: 1rem;
-  }
-  .section {
-    padding: 10px;
-  }
-}
- 
-</style>
+    .btn {
+      border-radius: 8px;
+    }
+    .btn-primary, .btn-warning, .btn-success, .btn-danger, .btn-outline-success {
+      background-color: #a64ca6;
+      border-color: #a64ca6;
+      color: #fff;
+    }
+    .btn-outline-success:hover {
+      background-color: #d77bd7;
+      color: #000;
+    }
+    .form-control {
+      background-color: #1e1e1e;
+      color: #fff;
+      border: 1px solid #a64ca6;
+    }
+    @media (max-width: 768px) {
+      .navbar-nav {
+        flex-direction: column !important;
+        align-items: flex-start;
+        padding-left: 1rem;
+      }
+      .section {
+        padding: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
+
+</body>
+</html>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
     <div class="container-fluid">
       <a class="navbar-brand fw-bold text-warning" href="#">🏹 Mega Okçuluk</a>
@@ -100,7 +121,7 @@
   <div class="container py-4">
     <div id="home" class="section active-section">
       <h2>🏹 Mega Akademi</h2>
-      <p>Mega Akademi spor klubü.</p>
+      <p>Mega Akademi spor klbü.</p>
       <input type="file" id="homeImage" class="form-control mb-3" onchange="uploadHomeImage()">
       <img id="homeImagePreview" src="" class="img-fluid rounded" style="display:none;" />
       <a href="https://www.instagram.com/mega_okculuk?igsh=MTlheHp2ZTRreXkyMg==" target="_blank" class="btn btn-warning mt-2">Instagram Sayfamız</a>
