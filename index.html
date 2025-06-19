@@ -18,15 +18,25 @@
       --beyaz: #ffffff;
     }
     body {
-      background: linear-gradient(135deg, var(--siyah), var(--mor));
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--beyaz);
-      animation: bodyFadeIn 1s ease-in-out;
-    }
-    @keyframes bodyFadeIn {
-      0% { opacity: 0; transform: scale(0.98); }
-      100% { opacity: 1; transform: scale(1); }
-    }
+  background: linear-gradient(-45deg, var(--siyah), var(--mor), var(--mor-acik), var(--siyah));
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--beyaz);
+  animation: bodyFadeIn 1s ease-in-out;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
     .navbar {
       background-color: rgba(0, 0, 0, 0.85);
       border-bottom: 2px solid var(--mor);
@@ -97,22 +107,9 @@
       color: var(--beyaz);
       border: 1px solid var(--mor);
     }
-    .logo-container {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      z-index: 999;
-    }
-    .logo-container img {
-      width: 80px;
-      height: auto;
-      border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.6);
-      transition: transform 0.3s ease;
-    }
-    .logo-container img:hover {
-      transform: scale(1.05);
-    }
+    
+    
+    
     @media (max-width: 991.98px) {
       .navbar-nav {
         flex-direction: column;
@@ -135,9 +132,7 @@
   </style>
 </head>
 <body>
-  <div class="logo-container">
-    <img src="https://imgur.com/a/vRvHcxe" alt="Mega Okçuluk Logo">
-  </div>
+
 
 </body>
 </html>
