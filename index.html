@@ -322,10 +322,31 @@ body {
   auth.signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       const user = userCredential.user;
+      console.log("Giriş yapan UID:", user.uid);  // UID'yi konsola yazdırıyoruz
       checkAdminStatus(user); // UID kontrolü burada yapılıyor
     })
     .catch((error) => {
       document.getElementById("adminStatus").textContent = "Hata: " + error.message;
+    });
+}
+
+function checkAdminStatus(user) {
+  const uid = user.uid;
+  console.log("Admin kontrol edilen UID:", uid); // Burada da log atalım
+  db.ref("admins/" + uid).once("value")
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        isAdmin = true;
+        document.getElementById("adminStatus").textContent = "Admin girişi başarılı!";
+        document.getElementById("video-upload").style.display = "block";
+      } else {
+        isAdmin = false;
+        document.getElementById("adminStatus").textContent = "Bu hesap admin değil.";
+        document.getElementById("video-upload").style.display = "none";
+      }
+    })
+    .catch((error) => {
+      console.error("Admin kontrol hatası:", error);
     });
 }
 
