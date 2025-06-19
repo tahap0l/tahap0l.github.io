@@ -97,6 +97,22 @@
       color: var(--beyaz);
       border: 1px solid var(--mor);
     }
+    .logo-container {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 999;
+    }
+    .logo-container img {
+      width: 80px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+    }
+    .logo-container img:hover {
+      transform: scale(1.05);
+    }
     @media (max-width: 991.98px) {
       .navbar-nav {
         flex-direction: column;
@@ -119,6 +135,9 @@
   </style>
 </head>
 <body>
+  <div class="logo-container">
+    <img src="15293603-a7ed-4088-84c5-7b4be0315c94.png" alt="Mega Okçuluk Logo">
+  </div>
 
 </body>
 </html>
