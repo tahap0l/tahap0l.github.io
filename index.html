@@ -182,23 +182,27 @@ body {
 
 <div id="profile" class="section">
   <h2>👤 Profil</h2>
-  <p><strong>Kullanıcı:</strong> Misafir</p>
+  <p><strong>Kullanıcı:</strong> <span id="userEmail">Misafir</span></p>
 
-  <div class="mt-3">
-    <h5>Giriş Yap</h5>
-    <input type="email" id="loginEmail" class="form-control mb-2" placeholder="Email">
-    <input type="password" id="loginPassword" class="form-control mb-2" placeholder="Şifre">
-    <button onclick="userLogin()" class="btn btn-primary mb-3">Giriş Yap</button>
-    <div id="loginStatus" class="mb-3"></div>
+  <div id="login-register-area">
+    <div class="mt-3" id="loginArea">
+      <h5>Giriş Yap</h5>
+      <input type="email" id="loginEmail" class="form-control mb-2" placeholder="Email">
+      <input type="password" id="loginPassword" class="form-control mb-2" placeholder="Şifre">
+      <button onclick="userLogin()" class="btn btn-primary mb-3">Giriş Yap</button>
+      <div id="loginStatus" class="mb-3"></div>
+    </div>
+
+    <div id="registerArea">
+      <h5>Hesap Aç</h5>
+      <input type="email" id="registerEmail" class="form-control mb-2" placeholder="Email">
+      <input type="password" id="registerPassword" class="form-control mb-2" placeholder="Şifre">
+      <button onclick="createAccount()" class="btn btn-outline-success">Hesap Oluştur</button>
+      <div id="registerStatus" class="mt-2"></div>
+    </div>
   </div>
 
-  <div>
-    <h5>Hesap Aç</h5>
-    <input type="email" id="registerEmail" class="form-control mb-2" placeholder="Email">
-    <input type="password" id="registerPassword" class="form-control mb-2" placeholder="Şifre">
-    <button onclick="createAccount()" class="btn btn-outline-success">Hesap Oluştur</button>
-    <div id="registerStatus" class="mt-2"></div>
-  </div>
+  <button id="logoutBtn" onclick="userLogout()" class="btn btn-warning mt-3" style="display:none;">Çıkış Yap</button>
 </div>
 
 <div id="admin" class="section">
@@ -208,6 +212,57 @@ body {
   <button onclick="adminLogin()" class="btn btn-danger">Giriş Yap</button>
   <div id="adminStatus" class="mt-2"></div>
 </div>
+
+<script>
+  auth.onAuthStateChanged(user => {
+    if (user) {
+      document.getElementById("userEmail").textContent = user.email;
+      document.getElementById("loginArea").style.display = "none";
+      document.getElementById("registerArea").style.display = "none";
+      document.getElementById("logoutBtn").style.display = "inline-block";
+      document.getElementById("loginStatus").textContent = "";
+      document.getElementById("registerStatus").textContent = "";
+    } else {
+      document.getElementById("userEmail").textContent = "Misafir";
+      document.getElementById("loginArea").style.display = "block";
+      document.getElementById("registerArea").style.display = "block";
+      document.getElementById("logoutBtn").style.display = "none";
+    }
+  });
+
+  function userLogin() {
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+    auth.signInWithEmailAndPassword(email, password)
+      .then(() => {
+        document.getElementById("loginStatus").textContent = "Giriş başarılı!";
+      })
+      .catch(error => {
+        document.getElementById("loginStatus").textContent = "Hata: " + error.message;
+      });
+  }
+
+  function createAccount() {
+    const email = document.getElementById("registerEmail").value;
+    const password = document.getElementById("registerPassword").value;
+
+    auth.createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        document.getElementById("registerStatus").textContent = "Hesap başarıyla oluşturuldu!";
+      })
+      .catch(error => {
+        document.getElementById("registerStatus").textContent = "Hata: " + error.message;
+      });
+  }
+
+  function userLogout() {
+    auth.signOut()
+      .then(() => {
+        document.getElementById("loginStatus").textContent = "Çıkış yapıldı.";
+      });
+  }
+</script>
 
   </div>  <script>
     const firebaseConfig = {
