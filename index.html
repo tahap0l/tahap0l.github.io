@@ -220,8 +220,6 @@ body {
       document.getElementById("loginArea").style.display = "none";
       document.getElementById("registerArea").style.display = "none";
       document.getElementById("logoutBtn").style.display = "inline-block";
-      document.getElementById("loginStatus").textContent = "";
-      document.getElementById("registerStatus").textContent = "";
     } else {
       document.getElementById("userEmail").textContent = "Misafir";
       document.getElementById("loginArea").style.display = "block";
@@ -274,7 +272,7 @@ body {
       appId: "1:328049350990:web:9e6a60c52b83fa1d0e3a77",
     };
     firebase.initializeApp(firebaseConfig);
-    
+
     const db = firebase.database();
     const storage = firebase.storage();
     const auth = firebase.auth();
