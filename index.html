@@ -183,7 +183,16 @@ body {
 <div id="profile" class="section">
   <h2>👤 Profil</h2>
   <p><strong>Kullanıcı:</strong> Misafir</p>
+
   <div class="mt-3">
+    <h5>Giriş Yap</h5>
+    <input type="email" id="loginEmail" class="form-control mb-2" placeholder="Email">
+    <input type="password" id="loginPassword" class="form-control mb-2" placeholder="Şifre">
+    <button onclick="userLogin()" class="btn btn-primary mb-3">Giriş Yap</button>
+    <div id="loginStatus" class="mb-3"></div>
+  </div>
+
+  <div>
     <h5>Hesap Aç</h5>
     <input type="email" id="registerEmail" class="form-control mb-2" placeholder="Email">
     <input type="password" id="registerPassword" class="form-control mb-2" placeholder="Şifre">
