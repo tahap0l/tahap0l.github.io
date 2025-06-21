@@ -261,19 +261,22 @@ body {
 </script>
 
   </div>  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyDMQdWe_3xzR4neePQnE7qo7qRKKGAEMnY",
-      authDomain: "mega-cb94b.firebaseapp.com",
-      projectId: "mega-cb94b",
-      storageBucket: "mega-cb94b.appspot.com",
-      messagingSenderId: "328049350990",
-      appId: "1:328049350990:web:9e6a60c52b83fa1d0e3a77",
-    };
-    firebase.initializeApp(firebaseConfig);
+  const firebaseConfig = {
+    apiKey: "...",
+    authDomain: "...",
+    projectId: "...",
+    storageBucket: "...",
+    messagingSenderId: "...",
+    appId: "..."
+  };
+  firebase.initializeApp(firebaseConfig);
 
-    const db = firebase.database();
-    const storage = firebase.storage();
-    const auth = firebase.auth();
+  const db = firebase.database();
+  const storage = firebase.storage();
+  const auth = firebase.auth(); // <-- BU SATIR auth'u tanımlar
+
+  // Bundan sonra auth kullanılabilir
+  auth.onAuthStateChanged(...); // ← şimdi hata vermez
 
     let isAdmin = false;
 
