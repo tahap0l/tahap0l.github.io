@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Seninle Geçen Günler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="days-counter">
+      <h2>Seninle <span class="highlight">98</span> Gün Olduk</h2>
+      <p class="counter-subtitle">♥ Her geçen gün seni daha çok seviyorum ♥</p>
+    </div>
+
+    <h3>Galeri</h3>
+    <div class="gallery">
+      <div class="gallery-item" onclick="showModal('resim1.jpeg ', '12 Mart 2023', 'Seninle ilk buluşmamız ogünün heyecanını mutlulugunu hiçbirşekilde anlatamam ogün seninle ilk kez bu kadar detaylı konuştugumuzda yağmurda sırılsıklam oldugumuzda dedimki ben evimi buldum ogünden beridir ise evim yuvam oldu 🤍')">
+        <img src="resim1.jpeg" alt="Tarih: 12.03.2023">
+      </div>
+      <div class="gallery-item" onclick="showModal('resim2.jpeg', '15 Nisan 2023', 'Hayatımın en güzel ve en mutlu günlerinden mezun oldugum günde yanımda olman paha biçilemezdi bitanem çünkü seni çok seviyorum böyle bir günü birlikte yaşadıgımız için çok mutluyum')">
+        <img src="resim2.jpeg" alt="Tarih: 15.04.2023">
+      </div>
+      <div class="gallery-item" onclick="showModal('resim3.jpeg', '22 Mayıs 2023', 'Okulda birlikte geçirdigimiz son günümüz bir yandan mutlu olurken bir yandanda hüzüne boguldugum bir gün okulun koridorlarında ki buluşmalarımız ilk zamanlarki utangaçlıklarımız birbirimize sorular hazırlamamız kısacası aşkımız bu okulda dogduy sevgilim ve hiç bitmemesi dilegiylee bir ömürr')">
+        <img src="resim3.jpeg" alt="Tarih: 22.05.2023">
+      </div>
+      <div class="gallery-item" onclick="showModal('resim4.jpeg', '10 Haziran 2023', 'Birlikte kutladıgımız 2.ayımız sayende bu 2 ayda hayata gülümsemeye gelecek hedefleri kurmaya her daim mutlu olmaya başladım bitanem bugünü hiç unutmayacagım birlikte 2 ay degil 2 ömür diliyorum')">
+        <img src="resim4.jpeg" alt="Tarih: 10.06.2023">
+      </div>
+      <div class="gallery-item" onclick="showModal('resim5.jpeg', '18 Temmuz 2023', 'Birlikte yaptıgımız en garip ama bi okadarda güzel  şeylerden biri ise  hiç bilmedigimiz bir parkta çift maskeleri yapmamızdı yoldan geçenlerin bize bakıp gülmeleri çok güzeldii')">
+        <img src="resim5.jpeg" alt="Tarih: 18.07.2023">
+      </div>
+      <div class="gallery-item" onclick="showModal('resim6.jpeg', '25 Ağustos 2023', 'Ailemle ilk tanıştıgın gün sevgilimm seni bu kadar çabuk ailemle tanıştırmamın sebebi kendimi sana baglamam seninle bir gelecek görmem sensiz yapamayacagımı anlamam iyikide tanıtmışımm seni çok seviyorummm')">
+        <img src="resim6.jpeg" alt="Tarih: 25.08.2023">
+      </div>
+      <div class="gallery-item" onclick="showModal('resim7.jpeg', '5 Eylül 2023', 'Birliktee gizlice durdugumuz en geç saat ogünün en güzell yanı ise seninle birlikte gün batımını izlemekti ve hayaller kurmaktı 🤍🤍')">
+        <img src="resim7.jpeg" alt="Tarih: 05.09.2023">
+      </div>
+      <div class="gallery-item" onclick="showModal('resim8.jpeg', '12 Ekim 2023', 'Birlikte uyudugumuz ilk gece yan yana olmasakta ruhlarımız birdi ve sen uyurken sana defalarca kez asık oldum her nefes alışında binlerce kez şükür ettim bitanemm iyiki varsın')">
+        <img src="resim8.jpeg" alt="Tarih: 12.10.2023">
+      </div>
+      <div class="gallery-item" onclick="showModal('resim9.jpeg', '20 Kasım 2023', 'Çiçek aldıgım ilk ve son kız olman🤍🤍')">
+        <img src="resim9.jpeg" alt="Tarih: 20.11.2023">
+      </div>
+      <div class="gallery-item" onclick="showModal('resim10.jpeg', '28 Aralık 2023', 'Onca agrıya strese ragmen yinede benimle buluştugun gün seni çokk seviyorummm inşallah iyi gelmişimdirr sana 🤍')">
+        <img src="resim10.jpeg" alt="Tarih: 28.12.2023">
+      </div>
+      <div class="gallery-item" onclick="showModal('resim11.jpeg', '5 Ocak 2024', 'Birlikte ettigimiz ilk dans o anı hiçbir kelimeyle anlatamam içimde sönmüş bir kömür sanki çiçekler açtı öyle bir güzellik dogdu içe dans ederken bana bakan gözlerin gülümseyen dudakların beni hayata baglayan şey sensin bitanem nolur hiç gitme hep benimle kal')">
+        <img src="resim11.jpeg" alt="Tarih: 05.01.2024">
+      </div>
+      <div class="gallery-item" onclick="showModal('resim12.jpeg', '14 Şubat 2024', 'Birlikte yaptıgımız ilk piknik birine ilk defa bu kadar hevesli heyecanlı bir tatlı yapmıştım çok güzeldi çünkü seninle birlikte yedik fatma hoca tarafından basıldıgımızıda hiçbi zaman unutmayacagım')">
+        <img src="resim12.jpeg" alt="Tarih: 14.02.2024">
+      </div>
+    </div>
+
+    <!-- Modal (Popup) -->
+    <div id="modal" class="modal" onclick="closeModal()">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg">
+      <div id="modalCaption"></div>
+    </div>
+
+    <h3>Bizim Şarkımız</h3>
+    <audio controls>
+      <source src="sarkimiz.mp3" type="audio/mpeg">
+      Tarayıcınız ses dosyasını desteklemiyor.
+    </audio>
+
+    <h3>Anılarımız</h3>
+    <ul>
+      <li>İlk buluşmamız: 12 Mart 2023 - Starbucks, Kadıköy</li>
+      <li>Pikniğe gittiğimiz gün: 20 Nisan 2023 - Yıldız Parkı</li>
+      <li>Sinemaya gittiğimiz gün: 22 Mayıs 2023 - Cineport</li>
+      <li>Doğum günün: 10 Haziran 2023 - Evde sürpriz parti</li>
+      <li>Plaj tatili: 18 Temmuz 2023 - Antalya</li>
+      <li>Kahvehanede sohbet: 25 Ağustos 2023 - Mandabatmaz</li>
+      <li>Alışveriş günü: 5 Eylül 2023 - Zorlu Center</li>
+      <li>Doğa yürüyüşü: 12 Ekim 2023 - Belgrad Ormanı</li>
+      <li>Romantik akşam: 20 Kasım 2023 - Bosphorus</li>
+      <li>Yılbaşı hazırlığı: 28 Aralık 2023 - Evde</li>
+      <li>Karlı yürüyüş: 5 Ocak 2024 - Maçka Parkı</li>
+      <li>Sevgililer Günü: 14 Şubat 2024 - Bosphorus Breeze</li>
+    </ul>
+
+    <h3>Bugüne Kadar Yaptıklarım İçin Affet Beni</h3>
+    <p>Seni çok seviyorum. Her şey için özür dilerim. 💕</p>
+  </div>
+
+  <script>
+    function showModal(imgSrc, date, description) {
+      var modal = document.getElementById("modal");
+      var modalImg = document.getElementById("modalImg");
+      var captionText = document.getElementById("modalCaption");
+      
+      modal.style.display = "block";
+      modalImg.src = imgSrc;
+      captionText.innerHTML = "<h3>" + date + "</h3><p>" + description + "</p>";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
